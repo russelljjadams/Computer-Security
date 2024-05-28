@@ -11,32 +11,44 @@ The vulnerability here stems from the application's logic, which likely checks f
 
 **Exploitation Steps:**
 
-1. **Intercept the Request:**  Utilize a web proxy tool like Burp Suite or OWASP ZAP to intercept the HTTP request sent to the challenge page.  
-    * Configure your browser to use the proxy.
-    * Navigate to the challenge page. The proxy will capture the request.
+**Method 1: Using a Web Proxy (Burp Suite, OWASP ZAP)**
 
-2. **Locate the User-Agent Header:** Within the captured request, find the "User-Agent" header. It will look something like this: 
+1. **Intercept the Request:** Configure your browser to use the proxy and navigate to the challenge page. The proxy will capture the outgoing request. 
+2. **Locate the User-Agent Header:**  Find the "User-Agent" header within the captured request.
+3. **Modify the Header:** Change the value of the User-Agent header to "admin".
+4. **Forward the Request:** Forward the modified request from your proxy to the server. 
+5. **Observe the Response:** The server should now grant access or display the restricted content.
 
-    ```
-    User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36 
-    ```
+**Method 2:  Using Python and the `requests` Module**
 
-3. **Modify the Header:**  Change the value of the User-Agent header to "admin". The modified header will look like this:
+```python
+import requests
 
-    ```
-    User-Agent: admin
-    ```
+url = 'http://challenge01.root-me.org/web-serveur/ch2/'  # Replace with the actual challenge URL
 
-4. **Forward the Request:**  Forward the modified request from your proxy to the server.
+headers = {
+    'User-Agent': 'admin' 
+}
 
-5. **Observe the Response:** The server, now tricked by the spoofed User-Agent, should grant access to the restricted content or functionality.
+response = requests.get(url, headers=headers)
+
+print(response.text)  # This will print the HTML content of the response
+```
+**Explanation:**
+
+* We import the `requests` library to make HTTP requests.
+* The `url` variable stores the challenge URL.
+* We create a dictionary `headers` to store our custom headers. Here we set the 'User-Agent' to 'admin'.
+* We use `requests.get()` to send a GET request to the URL with our modified headers.
+* Finally, we print the response text to view the results. 
 
 **Remediation:**
 
 * **Never rely solely on client-side attributes for critical access control.** User-Agent and other client-side headers can be trivially modified.
-* **Implement robust server-side authentication and authorization mechanisms.**  Employ secure methods like sessions, tokens, or OAuth to verify user identities and permissions.
+* **Implement robust server-side authentication and authorization mechanisms.** Employ secure methods like sessions, tokens, or OAuth to verify user identities and permissions.
 * **Treat all user input as untrusted.** Validate and sanitize any data received from the client, including headers, to prevent injection or manipulation vulnerabilities.
 
 **Conclusion:**
 
 This challenge showcases how easily exploitable vulnerabilities arise from misplaced trust in client-side data. By employing robust server-side security measures, developers can prevent unauthorized access and create more secure applications. 
+
