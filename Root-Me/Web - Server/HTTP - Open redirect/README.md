@@ -1,4 +1,5 @@
 ## Root-Me.org Challenge Write-Up: HTTP - Open Redirect 
+`https://www.root-me.org/en/Challenges/Web-Server/HTTP-Open-redirect`
 
 **Challenge Description:** This challenge delves into exploiting an "Open Redirect" vulnerability, but with an added layer of security. The challenge page displays three buttons leading to social media sites (Facebook, Twitter, and Slack) with URLs structured as follows: `http://challenge01.root-me.org/web-serveur/ch52/?url=https://facebook.com&h=a023cfbf5f1c39bdf8407f28b60cd134`
 
