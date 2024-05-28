@@ -52,3 +52,4 @@ print(response.text)  # This will print the HTML content of the response
 
 This challenge showcases how easily exploitable vulnerabilities arise from misplaced trust in client-side data. By employing robust server-side security measures, developers can prevent unauthorized access and create more secure applications. 
 
+test
