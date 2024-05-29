@@ -1,4 +1,5 @@
 ## Root-Me.org Challenge Write-Up: API - Broken Access
+`https://www.root-me.org/en/Challenges/Web-Server/API-Broken-Access`
 
 **Challenge Description:** This aptly named "API - Broken Access" challenge on Root-Me.org presents us with a seemingly standard web application offering user management features. However, a critical vulnerability lurks beneath its surface, highlighting the importance of thorough API security testing. We embarked on a winding journey, initially fixated on complex cookie manipulation, only to discover a much simpler solution by embracing a fundamental security principle: reading the documentation!
 
