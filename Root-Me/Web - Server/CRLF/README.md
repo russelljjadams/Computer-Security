@@ -28,3 +28,4 @@ The server, upon receiving this request, interprets the `%0d%0a` sequence (URL-e
 * Test different payloads beyond simple text injection. Explore the possibility of injecting HTML tags to assess the potential for cross-site scripting vulnerabilities. 
 
 By understanding the mechanics of CRLF injection, penetration testers can effectively identify and exploit this vulnerability in real-world applications. It's crucial to recognize that seemingly minor vulnerabilities can potentially cascade into more severe security breaches if left unaddressed. 
+
