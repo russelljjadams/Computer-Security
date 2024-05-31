@@ -24,6 +24,7 @@ The vulnerability exploited in this challenge stems from the fact that the JWT's
    - Utilize a JWT parsing tool (many are available online) or a Burp Suite extension like "JWT Editor" to decode the JWT and reveal its header, payload, and signature. To install the extension, refer to the official guide: [https://portswigger.net/burp/documentation/desktop/extensions/installing-extensions](https://portswigger.net/burp/documentation/desktop/extensions/installing-extensions). 
 
 3. **Modifying the Algorithm:**
+   - Working with JWT's in Burp Suite >>> `https://portswigger.net/burp/documentation/desktop/testing-workflow/session-management/jwts`
    - Within the JWT header, locate the `alg` parameter. This parameter dictates the signing algorithm used by the server to verify the token's integrity.
    - The challenge often relies on a weak or misconfigured server that accepts arbitrary algorithm values. 
    - Experiment by changing the `alg` value to "none" (which indicates no signing at all). In some scenarios, you might even need to bypass weak filters by modifying the casing, such as "nOnE".
