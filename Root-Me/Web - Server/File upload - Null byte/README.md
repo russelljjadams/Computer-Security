@@ -5,7 +5,7 @@
 
 **Understanding Null Byte Injection:**
 
-Before delving into the solution, let's dissect the vulnerability that makes this exploit possible: null byte injection.
+Before delving into the solution, let's dissect the vulnerability that makes this exploit possible: null byte injection. `https://www.thehacker.recipes/web/inputs/null-byte-injection`
 
 In many programming languages, a null byte (`%00` when URL encoded) is interpreted as the end of a string. This seemingly innocuous character can have significant security implications when combined with inadequate input validation, particularly in file upload functionalities.
 
