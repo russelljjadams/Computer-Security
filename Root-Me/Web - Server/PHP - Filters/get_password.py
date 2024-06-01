@@ -33,7 +33,7 @@ if response.status_code == 200:
             password_start = decoded_content.find("$password=\"") + len("$password=\"")
             password_end = decoded_content.find("\";", password_start)
             password = decoded_content[password_start:password_end]
-            print(password)
+            print("password:",password)
             #print(decoded_content)
         except base64.binascii.Error:
             print("Error: Invalid Base64 data found in response.")
