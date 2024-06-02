@@ -127,4 +127,4 @@ To prevent this vulnerability, the application should:
 - **Request Interception and Modification**: Tools like Burp Suite are essential for testing and exploiting web vulnerabilities.
 - **External Data Exfiltration**: Using tools like `curl` to send data to an external server can help in capturing and analyzing sensitive information.
 
-This write-up provides a comprehensive approach to understanding and solving the "Command Injection - Filter Bypass" challenge on Root-Me.org.
+This write-up provides a comprehensive approach to understanding and solving the "Command Injection - Filter Bypass" challenge on Root-Me.org. 
