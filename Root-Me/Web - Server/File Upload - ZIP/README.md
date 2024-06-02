@@ -1,8 +1,6 @@
 ## Root-Me.org Challenge Write-Up: File Upload - ZIP
 `https://www.root-me.org/en/Challenges/Web-Server/File-upload-ZIP`
 
-## Root-Me.org Challenge Write-Up: File Upload - ZIP
-
 **Challenge Description:**
 
 This challenge presents a classic scenario: a web application with a file upload feature. The objective is to exploit potential vulnerabilities related to how the server handles ZIP archives to read the content of the `index.php` file.
