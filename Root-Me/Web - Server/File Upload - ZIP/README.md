@@ -1,6 +1,8 @@
 ## Root-Me.org Challenge Write-Up: File Upload - ZIP
 `https://www.root-me.org/en/Challenges/Web-Server/File-upload-ZIP`
 
+## Root-Me.org Challenge Write-Up: File Upload - ZIP
+
 **Challenge Description:**
 
 This challenge presents a classic scenario: a web application with a file upload feature. The objective is to exploit potential vulnerabilities related to how the server handles ZIP archives to read the content of the `index.php` file.
@@ -49,6 +51,10 @@ This challenge presents a classic scenario: a web application with a file upload
 - **Observation is Key:** Carefully analyze the application's behavior, error messages, and any clues in the challenge description to guide your approach.
 
 **Remediation:**
+
+- **Secure File Handling Libraries:**  Ensure that any libraries or utilities used to handle ZIP archives are up-to-date and patched against known vulnerabilities related to symlink attacks and directory traversal.
+- **Validate Extracted Content:** Implement security checks to validate the contents and paths of files extracted from archives, preventing the creation of symlinks pointing to unintended locations. 
+- **Principle of Least Privilege:** Run the web server and file handling processes with the least privilege necessary to minimize the impact of potential exploits.
 
 - **Secure File Handling Libraries:**  Ensure that any libraries or utilities used to handle ZIP archives are up-to-date and patched against known vulnerabilities related to symlink attacks and directory traversal.
 - **Validate Extracted Content:** Implement security checks to validate the contents and paths of files extracted from archives, preventing the creation of symlinks pointing to unintended locations. 
