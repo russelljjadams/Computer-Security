@@ -1,4 +1,5 @@
 ## Root-Me.org Challenge Write-Up: JWT - Header Injection
+`https://www.root-me.org/en/Challenges/Web-Server/JWT-Header-Injection`
 
 **Challenge Description:** The "JWT - Header Injection" challenge confronts us with the enigmatic Keymaster who guards access to his domain.  Our mission: decipher the cryptic hints, "Give him the right key" and "The Keymaster now has his own site. He will only let you in if you give him the right secret and key," to unlock the secrets within.
 
