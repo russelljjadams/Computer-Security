@@ -1,5 +1,5 @@
 ## Root-Me.org Challenge Write-Up: Local File Inclusion - Double Encoding
-``
+`https://www.root-me.org/en/Challenges/Web-Server/Local-File-Inclusion-Double-encoding?lang=en`
 
 **Challenge Description:** This challenge tasks us with exploiting a Local File Inclusion (LFI) vulnerability to read a sensitive file (likely `config.php`). However, the application employs filters to prevent straightforward attacks.  The key to success lies in understanding and applying a non-standard double-encoding technique. 
 
