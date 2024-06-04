@@ -1,4 +1,5 @@
 ## Root-Me.org Challenge Write-Up: PHP – Loose Comparison
+`https://www.root-me.org/en/Challenges/Web-Server/PHP-Loose-Comparison`
 
 **Challenge Description:**  This challenge delves into the subtle dangers of loose comparison operators in PHP and how they can lead to unexpected authentication bypasses.  The goal is to exploit this weakness to retrieve the flag. 
 
@@ -39,6 +40,7 @@ Here's a breakdown:
 
 2. **The Vulnerable Comparison:**  The `if ($s.$r == $h)` statement uses loose comparison. If the string `$s` concatenated with the random number `$r` is loosely equal to the hash `$h`, the flag is revealed. 
 
+
 **The Exploit: Finding a "Magic Hash"**
 
 The exploit hinges on finding a string that, when hashed (likely using MD5, based on common practices), produces a "magic hash" that:
@@ -63,13 +65,12 @@ The following inputs satisfy these conditions:
 
 **Exploitation Steps:**
 
-1. **Craft the Payload:** Set the URL parameters as follows:
-   ```
-   http://challenge01.root-me.org/[challenge_path]/?s=0e830400451993494058024219903391&h=QNKCDZO
-   ```
-   - Replace `[challenge_path]` with the actual path to the challenge.
+1. **Use the inputs that meet the conditions on the form.**:
 
-2. **Retrieve the Flag:** Visiting the crafted URL should trigger the vulnerable comparison, resulting in the flag being displayed. 
+- `seed = "0e830400451993494058024219903391"` (The MD5 hash of "QNKCDZO")
+- `hash = "QNKCDZO"` 
+
+2. **Retrieve the Flag:** Submitting the form should trigger the vulnerable comparison, resulting in the flag being displayed. 
 
 **Remediation:**
 
