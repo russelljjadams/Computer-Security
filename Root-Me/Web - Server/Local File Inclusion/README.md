@@ -1,4 +1,5 @@
 ## Root-Me.org Challenge Write-Up: Local File Inclusion (Comprehensive Guide)
+`https://www.root-me.org/en/Challenges/Web-Server/Local-File-Inclusion`
 
 **Challenge Description:** The "Local File Inclusion" challenge throws down the gauntlet: reach the admin section. It seems simple enough, but a dangerous vulnerability lurks beneath the surface—one that can give attackers access to sensitive files and potentially control over the entire web server. 
 
