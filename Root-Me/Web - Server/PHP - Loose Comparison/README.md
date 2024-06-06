@@ -84,3 +84,4 @@ The following inputs satisfy these conditions:
 - **Know Your Hashes:** Familiarize yourself with common hashing algorithms and their potential quirks (like PHP's "magic hashes").
 
 This challenge highlights the importance of secure coding practices and the need to understand the subtle nuances of PHP's type system and comparison operators. 
+
