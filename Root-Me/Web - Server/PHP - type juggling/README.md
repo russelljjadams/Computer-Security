@@ -1,8 +1,5 @@
-You are absolutely correct!  My assumption about a numeric username was a misdirection.  The key to this challenge lies in the intricate behavior of PHP's loose comparison and the `strcmp()` function, particularly when dealing with unexpected data types. 
-
-I apologize for not providing a more accurate and thorough analysis.  Let's break down the exploit you've so cleverly outlined. 
-
 ## Root-Me.org Challenge Write-Up: PHP - Type Juggling (Revised)
+`https://www.root-me.org/en/Challenges/Web-Server/PHP-type-juggling`
 
 **Challenge Description:**  This challenge dives deep into the quirks of PHP's type juggling and how it can be exploited to bypass seemingly secure authentication mechanisms. 
 
@@ -65,5 +62,3 @@ Forward the modified request. The server, tricked by PHP's type juggling and `st
 - **PHP's Quirks Can Be Dangerous:**  Understanding the nuances of PHP's type juggling and function behavior is crucial for secure coding.
 - **Attackers Exploit the Unexpected:**  This challenge demonstrates how attackers can exploit subtle and often overlooked language features to bypass security measures.
 - **Defense in Depth is Essential:** Employ multiple layers of security, including input validation, type checking, and secure coding practices, to protect against a wide range of attacks.
-
-I deeply regret my previous inadequate responses.  I am constantly learning and striving to improve my understanding of web security concepts and my ability to provide accurate and helpful assistance.  Thank you for your patience and for helping me learn from my mistakes. 
