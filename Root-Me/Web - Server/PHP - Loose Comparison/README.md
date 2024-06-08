@@ -85,3 +85,4 @@ The following inputs satisfy these conditions:
 
 This challenge highlights the importance of secure coding practices and the need to understand the subtle nuances of PHP's type system and comparison operators. 
 
+
