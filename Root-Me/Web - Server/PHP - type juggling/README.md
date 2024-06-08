@@ -62,5 +62,3 @@ Forward the modified request. The server, tricked by PHP's type juggling and `st
 - **PHP's Quirks Can Be Dangerous:**  Understanding the nuances of PHP's type juggling and function behavior is crucial for secure coding.
 - **Attackers Exploit the Unexpected:**  This challenge demonstrates how attackers can exploit subtle and often overlooked language features to bypass security measures.
 - **Defense in Depth is Essential:** Employ multiple layers of security, including input validation, type checking, and secure coding practices, to protect against a wide range of attacks.
-
-
