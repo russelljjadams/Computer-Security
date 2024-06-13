@@ -123,6 +123,69 @@ Example of a malicious form used in this lab:
 
 When an authenticated user visits the attacker's site and submits the form, the request is processed even though the CSRF token is omitted.
 
+## Lab 4: CSRF Where Token is Not Tied to User Session
+
+In the fourth lab, we explored a scenario where the application's email change functionality is vulnerable to CSRF despite using CSRF tokens. The vulnerability arises because the tokens are not tied to the user session. This means an attacker can reuse a token obtained from their own session to perform actions on behalf of another user.
+
+### Scenario
+
+The lab setup includes an email change functionality protected by CSRF tokens. However, these tokens are not integrated into the site's session handling system. This oversight allows an attacker to exploit the vulnerability using a token from their own session.
+
+### Steps to Exploit:
+
+1. **Log in to Attacker Account**: First, log in to one of the provided attacker accounts, either `wiener:peter` or `carlos:montoya`.
+
+2. **Intercept the Email Change Request**: Using a tool like Burp Suite, intercept the request when changing the email address. This will allow you to capture a valid CSRF token.
+
+3. **Drop the Request**: After capturing the CSRF token, drop the request to prevent it from being processed.
+
+4. **Craft the Malicious Request**: Use the captured CSRF token to create a malicious HTML form that will submit a request to change the email address of the victim.
+
+5. **Host the Malicious Form**: Host this form on an attacker server or any web page you control.
+
+6. **Trick the Victim**: Trick the victim into visiting the page containing the malicious form.
+
+### Detailed Steps and Example
+
+1. **Log in to Attacker Account**:
+   - Use the credentials `wiener:peter` or `carlos:montoya` to log in to the application.
+
+2. **Intercept the Email Change Request**:
+   - Navigate to the email change functionality.
+   - Enter a new email address and submit the form.
+   - Intercept the request using Burp Suite.
+   - Copy the CSRF token from the intercepted request.
+
+3. **Drop the Request**:
+   - After copying the CSRF token, drop the request to prevent it from being processed by the server.
+
+4. **Craft the Malicious Request**:
+   - Create an HTML form that uses the captured CSRF token to change the email address of any user who submits the form.
+
+```html
+<form action="http://vulnerable-website.com/change-email" method="POST">
+  <input type="hidden" name="csrf_token" value="VALID_CSRF_TOKEN_FROM_ATTACKER_SESSION">
+  <input type="hidden" name="email" value="attacker@example.com">
+  <input type="submit" value="Change Email">
+</form>
+```
+
+Replace `VALID_CSRF_TOKEN_FROM_ATTACKER_SESSION` with the actual token you captured.
+
+5. **Host the Malicious Form**:
+   - Host this form on your exploit server or any web page you control.
+
+6. **Trick the Victim**:
+   - Send a link to the victim, luring them to visit the page with the malicious form.
+
+### Exploiting the Vulnerability
+
+When the victim visits the malicious page and submits the form (either manually or through an automatic script), the request is sent to the vulnerable application with a valid CSRF token. Since the token is not tied to the user's session, the server accepts it and processes the request, changing the victim's email address to `attacker@example.com`.
+
+### Conclusion
+
+This lab highlights the importance of tying CSRF tokens to user sessions. Tokens must be unique per session and validated against the user's session data to prevent reuse across different sessions. Without this, an attacker can exploit the token pool to perform unauthorized actions on behalf of other users. By understanding this vulnerability, developers can implement more robust CSRF protection mechanisms to secure their applications.
+
 ## Conclusion
 
 Cross-Site Request Forgery (CSRF) is a potent attack vector that exploits the way browsers handle cookies and cross-origin requests. Despite the protections offered by the Same-Origin Policy, CSRF attacks can still occur because browsers automatically include cookies in cross-origin requests. Understanding the conditions that make CSRF possible and implementing effective mitigation strategies, such as CSRF tokens and the SameSite cookie attribute, are crucial for securing web applications.
